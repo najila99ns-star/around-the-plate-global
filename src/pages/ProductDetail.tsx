@@ -80,70 +80,111 @@ const ProductDetail = () => {
     <div className="min-h-screen py-20 px-6">
       <div className="container mx-auto max-w-7xl">
         {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div>
-            <img 
-              src={product.image} 
-              alt={product.dish}
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+        <div className="grid lg:grid-cols-2 gap-12 mb-16 animate-fade-in">
+          <div className="space-y-6">
+            <div className="aspect-square overflow-hidden rounded-lg shadow-2xl">
+              <img 
+                src={product.image} 
+                alt={product.dish}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            
+            {/* Gallery thumbnails */}
+            <div className="grid grid-cols-4 gap-4">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="aspect-square rounded-md overflow-hidden border-2 border-border hover:border-primary cursor-pointer transition-colors">
+                  <img 
+                    src={product.image} 
+                    alt={`${product.dish} view ${i}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-heading uppercase">
-              {product.country} – {product.dish}
-            </h1>
-            <p className="text-xl font-body text-muted-foreground">
+          <div className="space-y-6 animate-slide-up">
+            <div>
+              <p className="text-sm font-body text-primary-dark uppercase tracking-wider mb-2">
+                {product.country}
+              </p>
+              <h1 className="text-4xl md:text-5xl font-heading uppercase leading-tight">
+                {product.dish}
+              </h1>
+            </div>
+            
+            <p className="text-lg font-body text-muted-foreground leading-relaxed">
               {product.description}
             </p>
             
-            <div className="flex gap-3">
-              <Badge variant="secondary" className="font-body">
-                Difficulty: {product.difficulty}
+            <div className="flex gap-3 flex-wrap">
+              <Badge variant="secondary" className="font-body px-4 py-2 text-sm">
+                <span className="font-semibold">Difficulty:</span> {product.difficulty}
               </Badge>
-              <Badge variant="secondary" className="font-body">
-                Time: {product.time}
+              <Badge variant="secondary" className="font-body px-4 py-2 text-sm">
+                <span className="font-semibold">Time:</span> {product.time}
               </Badge>
-              <Badge variant="secondary" className="font-body">
-                Servings: {product.servings}
+              <Badge variant="secondary" className="font-body px-4 py-2 text-sm">
+                <span className="font-semibold">Servings:</span> {product.servings}
               </Badge>
             </div>
             
-            <div className="border-t border-b py-6">
-              <p className="text-4xl font-heading">{product.price}</p>
+            <div className="border-t border-b py-6 my-6">
+              <p className="text-5xl font-heading text-primary-dark">{product.price}</p>
+              <p className="text-sm font-body text-muted-foreground mt-2">Free shipping over €50</p>
             </div>
             
-            <div className="flex gap-4">
-              <select className="border rounded-md px-4 py-2 font-body">
-                <option>Quantity: 1</option>
-                <option>Quantity: 2</option>
-                <option>Quantity: 3</option>
-              </select>
-              <Button className="flex-1 bg-primary-dark hover:bg-primary" size="lg">
+            <div className="space-y-4">
+              <div className="flex gap-4 items-center">
+                <label htmlFor="quantity" className="font-body font-medium">Quantity:</label>
+                <select 
+                  id="quantity"
+                  className="border-2 border-border rounded-md px-4 py-3 font-body focus:border-primary focus:outline-none transition-colors"
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              
+              <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg" size="lg">
                 Add to Cart
+              </Button>
+              
+              <Button variant="outline" className="w-full border-2 border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white py-6 text-lg" size="lg">
+                Add to Wishlist
               </Button>
             </div>
           </div>
         </div>
 
         {/* What's Inside */}
-        <Card className="p-8 mb-8">
-          <h2 className="text-3xl font-heading uppercase mb-6">
+        <Card className="p-10 mb-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-up">
+          <h2 className="text-4xl font-heading uppercase mb-6 text-primary-dark">
             What's Inside the Box?
           </h2>
-          <ul className="grid md:grid-cols-2 gap-3 font-body text-lg">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {product.ingredients.map((ingredient: string, index: number) => (
-              <li key={index} className="flex items-center gap-2">
-                <span className="text-primary">✓</span>
-                {ingredient}
-              </li>
+              <div key={index} className="flex items-start gap-3 p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                <span className="text-secondary text-2xl mt-1">✓</span>
+                <span className="font-body text-lg">{ingredient}</span>
+              </div>
             ))}
-          </ul>
+          </div>
+          <div className="mt-8 p-6 bg-gradient-to-r from-primary/10 to-transparent rounded-lg border-l-4 border-primary">
+            <p className="font-body text-muted-foreground">
+              <span className="font-semibold text-foreground">Plus:</span> Detailed recipe card, 
+              cultural guide, cooking tips, and a QR code for an authentic music playlist.
+            </p>
+          </div>
         </Card>
 
         {/* About This Cuisine */}
-        <Card className="p-8 mb-16">
-          <h2 className="text-3xl font-heading uppercase mb-6">
+        <Card className="p-10 mb-16 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-muted/20 animate-slide-up">
+          <h2 className="text-4xl font-heading uppercase mb-6 text-primary-dark">
             About This Cuisine
           </h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
@@ -152,9 +193,9 @@ const ProductDetail = () => {
         </Card>
 
         {/* You Might Also Like */}
-        <div>
-          <h2 className="text-3xl font-heading uppercase mb-8">
-            You Might Also Like
+        <div className="animate-fade-in">
+          <h2 className="text-4xl font-heading uppercase mb-8 text-center">
+            Explore Related Countries
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {otherProducts.map((p: any) => (
