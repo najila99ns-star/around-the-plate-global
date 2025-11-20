@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import moroccoImage from "@/assets/morocco-tagine-box.jpg";
 import nigeriaImage from "@/assets/nigeria-jollof-box.jpg";
 import japanImage from "@/assets/japan-ramen-box.jpg";
+import subscriptionBg from "@/assets/subscription-bg.jpg";
 
 const Home = () => {
   const products = [
@@ -78,7 +79,7 @@ const Home = () => {
       {/* Subscription Section */}
       <section 
         className="relative py-24 px-6 bg-cover bg-center"
-        style={{ backgroundImage: `url(${require('@/assets/subscription-bg.jpg')})` }}
+        style={{ backgroundImage: `url(${subscriptionBg})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
         <div className="container mx-auto max-w-5xl relative z-10">
