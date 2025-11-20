@@ -4,44 +4,50 @@ import { Link } from "react-router-dom";
 
 const HomeHero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center py-16 px-6 overflow-hidden bg-gradient-to-b from-white via-primary/5 to-white">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col items-center text-center space-y-8 animate-fade-in">
-          {/* Large Centered Globe */}
-          <div className="relative w-full max-w-4xl mb-4">
-            <img 
-              src={globeHero} 
-              alt="Interactive World Globe" 
-              className="w-full h-auto"
-            />
-            
-            {/* Hero Text Overlay on Globe */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading uppercase leading-tight tracking-wide text-foreground drop-shadow-lg">
-                Travel the World Through Taste
-              </h1>
-              <p className="text-lg md:text-xl font-body text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-4 drop-shadow">
+    <section className="relative min-h-[90vh] flex items-center justify-center py-16 px-6 overflow-hidden bg-gradient-to-b from-background via-secondary/10 to-background">
+      <div className="container mx-auto max-w-7xl">
+        <div className="flex flex-col items-center space-y-8 animate-fade-in">
+          {/* Main Heading - Centered Above Globe */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading uppercase leading-tight tracking-wide text-primary text-center">
+            Travel the World Through Taste
+          </h1>
+
+          {/* Three Column Layout: Left Text | Globe | Right Text */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center w-full max-w-6xl">
+            {/* Left Text Block */}
+            <div className="text-center lg:text-right animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <p className="text-xl md:text-2xl font-body text-foreground leading-relaxed">
                 Explore authentic recipe boxes from around the globe, curated for ambitious home chefs.
+              </p>
+            </div>
+
+            {/* Center Globe */}
+            <div className="relative w-full max-w-md mx-auto animate-float">
+              <img 
+                src={globeHero} 
+                alt="Interactive World Globe" 
+                className="w-full h-auto drop-shadow-2xl"
+              />
+            </div>
+
+            {/* Right Text Block */}
+            <div className="text-center lg:text-left animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <p className="text-xl md:text-2xl font-body text-foreground leading-relaxed">
+                Turn the globe. Tap a pin. Explore the taste.
               </p>
             </div>
           </div>
 
-          {/* CTA Buttons Below Globe */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-            <Button 
-              size="lg" 
-              className="bg-[#E89A61] hover:bg-[#E89A61]/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg px-8 py-6"
-            >
-              Explore the Globe
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              asChild
-              className="border-2 border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white transition-all duration-300 text-lg px-8 py-6"
-            >
-              <Link to="/catalog">View All Boxes</Link>
-            </Button>
+          {/* CTA Button Below Globe */}
+          <div className="flex justify-center pt-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+            <Link to="/catalog">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-xl px-12 py-7 rounded-full font-body"
+              >
+                Start Your Taste Journey
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

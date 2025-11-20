@@ -4,7 +4,7 @@ import logo from "@/assets/logo-teal.png";
 
 const FooterSection = () => {
   return (
-    <footer className="bg-gradient-to-b from-primary-dark to-[hsl(175,42%,30%)] text-white py-16 px-6">
+    <footer className="bg-gradient-to-b from-primary to-primary-dark text-primary-foreground py-16 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
@@ -17,7 +17,7 @@ const FooterSection = () => {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 bg-white/10 hover:bg-accent rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -26,7 +26,7 @@ const FooterSection = () => {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 bg-white/10 hover:bg-accent rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -35,7 +35,7 @@ const FooterSection = () => {
                 href="https://tiktok.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 bg-white/10 hover:bg-accent rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="TikTok"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -48,20 +48,20 @@ const FooterSection = () => {
           <div>
             <h3 className="font-heading uppercase mb-6 text-lg tracking-wider">Navigation</h3>
             <ul className="space-y-3 font-body">
-              <li><Link to="/" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">Home</Link></li>
-              <li><Link to="/catalog" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">Catalog</Link></li>
-              <li><Link to="/about" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">About</Link></li>
-              <li><Link to="/contact" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">Contact</Link></li>
+              <li><Link to="/" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">Home</Link></li>
+              <li><Link to="/catalog" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">Discover Boxes</Link></li>
+              <li><Link to="/about" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">About</Link></li>
+              <li><Link to="/contact" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">Contact</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-heading uppercase mb-6 text-lg tracking-wider">Support</h3>
             <ul className="space-y-3 font-body">
-              <li><a href="#" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">FAQs</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">Shipping Info</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">Returns</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors hover:pl-2 inline-block transition-all duration-200">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">FAQs</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">Shipping Info</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">Returns</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors hover:pl-2 inline-block transition-all duration-200">Privacy Policy</a></li>
             </ul>
           </div>
           
