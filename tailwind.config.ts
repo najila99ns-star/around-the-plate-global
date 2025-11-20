@@ -29,10 +29,8 @@ export default {
           foreground: "hsl(var(--secondary-foreground))",
         },
         accent: {
-          yellow: "hsl(var(--accent-yellow))",
-          olive: "hsl(var(--accent-olive))",
-          blue: "hsl(var(--accent-blue))",
-          indigo: "hsl(var(--accent-indigo))",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -53,7 +51,7 @@ export default {
       },
       fontFamily: {
         heading: ['Impact', 'Arial Black', 'sans-serif'],
-        body: ['Book Antiqua', 'Palatino', 'serif'],
+        body: ['Libre Baskerville', 'Book Antiqua', 'Palatino Linotype', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

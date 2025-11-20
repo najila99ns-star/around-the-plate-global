@@ -15,36 +15,43 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-8">
             <Link 
               to="/" 
-              className="text-foreground hover:text-primary-dark transition-colors font-body"
+              className="text-foreground hover:text-primary transition-colors font-body text-lg"
             >
               Home
             </Link>
             <Link 
               to="/catalog" 
-              className="text-foreground hover:text-primary-dark transition-colors font-body"
+              className="text-foreground hover:text-primary transition-colors font-body text-lg"
             >
-              Catalog
+              Discover Boxes
             </Link>
             <Link 
               to="/about" 
-              className="text-foreground hover:text-primary-dark transition-colors font-body"
+              className="text-foreground hover:text-primary transition-colors font-body text-lg"
             >
               About
             </Link>
             <Link 
               to="/contact" 
-              className="text-foreground hover:text-primary-dark transition-colors font-body"
+              className="text-foreground hover:text-primary transition-colors font-body text-lg"
             >
               Contact
             </Link>
           </div>
 
-          <Button variant="ghost" size="icon" className="relative">
-            <ShoppingCart className="h-5 w-5" />
-            <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
-              0
-            </span>
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button 
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-body px-6"
+            >
+              Order
+            </Button>
+            <Button variant="ghost" size="icon" className="relative">
+              <ShoppingCart className="h-5 w-5" />
+              <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                0
+              </span>
+            </Button>
+          </div>
         </nav>
       </div>
     </header>

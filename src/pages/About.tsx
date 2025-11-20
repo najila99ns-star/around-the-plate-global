@@ -22,13 +22,13 @@ const About = () => {
       </section>
 
       {/* Brand Story */}
-      <section className="py-20 px-6 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-20 px-6 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-heading uppercase mb-6 text-primary-dark">
-              Our Story
+            <h2 className="text-4xl md:text-5xl font-heading uppercase mb-6 text-primary">
+              Our Mission
             </h2>
-            <div className="space-y-6 font-body text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-6 font-body text-lg text-foreground/80 leading-relaxed">
               <p>
                 Around the Plate was born from a simple belief: that food is the most powerful way 
                 to connect with cultures, traditions, and people around the world. We created a 
@@ -50,11 +50,11 @@ const About = () => {
       </section>
 
       {/* Vision & Values */}
-      <section className="py-20 px-6 bg-primary-dark text-white">
+      <section className="py-20 px-6 bg-primary text-primary-foreground">
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-12 animate-fade-in">
-            <Card className="p-8 bg-white/10 backdrop-blur border-white/20">
-              <h3 className="text-3xl font-heading uppercase mb-4">Our Vision</h3>
+            <Card className="p-8 bg-primary-foreground/10 backdrop-blur border-primary-foreground/20">
+              <h3 className="text-3xl font-heading uppercase mb-4 text-accent">Our Inspiration</h3>
               <p className="font-body text-lg leading-relaxed opacity-95">
                 To make authentic global cuisine accessible to home chefs everywhere, creating 
                 a world where cultural understanding grows through shared culinary experiences. 
@@ -62,23 +62,23 @@ const About = () => {
               </p>
             </Card>
             
-            <Card className="p-8 bg-white/10 backdrop-blur border-white/20">
-              <h3 className="text-3xl font-heading uppercase mb-4">Our Values</h3>
+            <Card className="p-8 bg-primary-foreground/10 backdrop-blur border-primary-foreground/20">
+              <h3 className="text-3xl font-heading uppercase mb-4 text-accent">How It Works</h3>
               <ul className="space-y-3 font-body text-lg">
                 <li className="flex items-start gap-3">
-                  <span className="text-secondary text-xl">✓</span>
+                  <span className="text-accent text-xl font-bold">✓</span>
                   <span>Authenticity in every ingredient and recipe</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-secondary text-xl">✓</span>
+                  <span className="text-accent text-xl font-bold">✓</span>
                   <span>Quality and sustainability in sourcing</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-secondary text-xl">✓</span>
+                  <span className="text-accent text-xl font-bold">✓</span>
                   <span>Cultural respect and education</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-secondary text-xl">✓</span>
+                  <span className="text-accent text-xl font-bold">✓</span>
                   <span>Inspiring culinary curiosity and adventure</span>
                 </li>
               </ul>
