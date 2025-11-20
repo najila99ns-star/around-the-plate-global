@@ -2,6 +2,7 @@ import HomeHero from "@/components/HomeHero";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import moroccoImage from "@/assets/morocco-tagine-box.jpg";
 import nigeriaImage from "@/assets/nigeria-jollof-box.jpg";
 import japanImage from "@/assets/japan-ramen-box.jpg";
@@ -75,27 +76,96 @@ const Home = () => {
       </section>
 
       {/* Subscription Section */}
-      <section className="py-20 px-6 bg-primary-dark text-white">
+      <section 
+        className="relative py-24 px-6 bg-cover bg-center"
+        style={{ backgroundImage: `url(${require('@/assets/subscription-bg.jpg')})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1 text-white">
+              <h2 className="text-4xl md:text-5xl font-heading uppercase mb-6 leading-tight">
+                Subscribe to a Monthly Culinary Journey
+              </h2>
+              <p className="text-xl font-body mb-6 opacity-95 leading-relaxed">
+                Get a curated world box delivered to your home every month. Each box features a different country, 
+                with premium ingredients and authentic recipes.
+              </p>
+              <ul className="font-body space-y-3 mb-8 text-lg">
+                <li className="flex items-center gap-3">
+                  <span className="text-secondary text-xl">✓</span>
+                  <span>Premium ingredients from around the world</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-secondary text-xl">✓</span>
+                  <span>Authentic recipes with cultural stories</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-secondary text-xl">✓</span>
+                  <span>Cultural guide and playlist</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-secondary text-xl">✓</span>
+                  <span>Cancel anytime</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-secondary text-xl">✓</span>
+                  <span>Free shipping over €50</span>
+                </li>
+              </ul>
+              <Button size="lg" className="bg-[#E89A61] hover:bg-[#E89A61]/90 text-white text-lg px-8 py-6 shadow-xl">
+                Start Your Subscription
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Chef Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-heading uppercase mb-6">
-            Subscribe to a Monthly Culinary Journey
+            AI Inspire Me Chef
           </h2>
-          <p className="text-xl font-body mb-8 opacity-90">
-            Get a curated world box delivered to your home every month. Each box features a different country, 
-            with premium ingredients and authentic recipes.
+          <p className="text-xl font-body text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Not sure what you're in the mood for? Let our AI Chef inspire your next culinary adventure.
           </p>
-          <Card className="p-8 text-foreground">
-            <h3 className="text-2xl font-heading uppercase mb-4">Monthly Subscription</h3>
-            <ul className="font-body text-left space-y-2 mb-6">
-              <li>✓ Premium ingredients from around the world</li>
-              <li>✓ Authentic recipes with cultural stories</li>
-              <li>✓ Cultural guide and playlist</li>
-              <li>✓ Cancel anytime</li>
-              <li>✓ Free shipping over €50</li>
-            </ul>
-            <Button size="lg" className="w-full bg-secondary hover:bg-secondary/90">
-              Start Your Subscription
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-primary hover:bg-primary hover:text-white transition-all"
+            >
+              Surprise me
             </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-primary hover:bg-primary hover:text-white transition-all"
+            >
+              Something spicy
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-primary hover:bg-primary hover:text-white transition-all"
+            >
+              Comfort food
+            </Button>
+          </div>
+
+          <Card className="p-8 max-w-2xl mx-auto">
+            <input 
+              type="text" 
+              placeholder="I want something vegetarian and cozy..."
+              className="w-full px-4 py-3 mb-4 border-2 border-border rounded-md font-body focus:outline-none focus:border-primary transition-colors"
+            />
+            <Link to="/ai-chef">
+              <Button size="lg" className="w-full bg-primary-dark hover:bg-primary-dark/90 text-white">
+                Open AI Chef
+              </Button>
+            </Link>
           </Card>
         </div>
       </section>
